@@ -14,5 +14,7 @@ public interface BoardMapper {
 
     int boardUpdate(Board board);
 
+    Board readBoardDetail(int id);
+
 
 }

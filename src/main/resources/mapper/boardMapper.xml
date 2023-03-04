@@ -43,6 +43,16 @@
         WHERE ID = #{id}
     </update>
 
+    <select id="readBoardDetail" resultType="com.example.demo.board.Board" parameterType="int">
+        SELECT ID,
+               PAGE,
+               KIND,
+               KEYWORD,
+               CREATDATE,
+               UPDATEDATE
+        FROM  BOARD
+        WHERE ID = #{id}
+    </select>
 
 
 

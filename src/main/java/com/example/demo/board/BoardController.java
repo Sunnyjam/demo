@@ -29,4 +29,9 @@ public class BoardController {
     public int boardUpdate(@RequestBody Board board) {
         return boardService.boardUpdate(board);
     }
+
+    @GetMapping("/readBoardDetail/{id}")
+    public Board readBoardDetail(@PathVariable int id) {
+        return boardService.readBoardDetail(id);
+    }
 }

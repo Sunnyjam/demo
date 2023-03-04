@@ -25,4 +25,8 @@ public class BoardService {
      public int boardUpdate(Board board) {
          return boardMapper.boardUpdate(board);
      }
+
+     public Board readBoardDetail(int id) {
+         return boardMapper.readBoardDetail(id);
+     }
 }
