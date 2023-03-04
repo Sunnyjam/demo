@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.board.BoardMapper">
+
+    <insert id="insertBoard" parameterType="com.example.demo.board.Board" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO board (
+        ID,
+        PAGE,
+        KIND,
+        KEYWORD,
+        CREATDATE,
+        UPDATEDATE
+        )
+        VALUES (
+        #{id},
+        #{page},
+        #{kind},
+        #{keyword},
+        NOW(),
+        NOW()
+        )
+    </insert>
+
+    <select id="readBoard" resultType="com.example.demo.board.Board">
+        SELECT ID
+             , PAGE
+             , KIND
+             , KEYWORD
+        FROM BOARD
+    </select>
+
+    <delete id="deleteBoard" parameterType="com.example.demo.board.Board">
+        DELETE FROM BOARD
+        WHERE ID = #{id}
+    </delete>
+
+    <update id="boardUpdate" parameterType="com.example.demo.board.Board">
+        UPDATE BOARD
+        SET   KIND = #{kind},
+              KEYWORD = #{keyword}
+        WHERE ID = #{id}
+    </update>
+
+
+
+
+</mapper>
